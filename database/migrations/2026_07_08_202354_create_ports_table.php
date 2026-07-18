@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('ports', function (Blueprint $table) {
             $table->id();
+            $table->string('port_name', 150);   // Nama Pelabuhan
+            $table->string('country_code', 10); // Kode Negara Pelabuhan[cite: 1]
+            $table->decimal('latitude', 10, 8);  // Koordinat Lintang Peta[cite: 1]
+            $table->decimal('longitude', 11, 8); // Koordinat Bujur Peta[cite: 1]
+            $table->string('risk_level', 20)->default('Low'); // Status Risiko Logistik[cite: 1]
             $table->timestamps();
         });
     }
